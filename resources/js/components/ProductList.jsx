@@ -30,9 +30,9 @@ const ProductList = () => {
     return (
         <>
             {loading ? (
-                <h2>Loading...</h2>
+                <h2>Téléchargement...</h2>
             ) : products.length === 0 ? (
-                <h3>Not Found !</h3>
+                <h3>Pas d'articles en vogue !</h3>
             ) : (
                 products.map((product, index) => {
                     return (

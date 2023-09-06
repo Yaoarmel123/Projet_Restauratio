@@ -69,7 +69,7 @@ const ProductShop = () => {
                                     columnGap: ".5rem",
                                 }}
                             >
-                                <label>Sort By :</label>
+                                <label>Trier par :</label>
                                 <select
                                     name="sortingBy"
                                     style={{ width: "150px" }}
@@ -77,16 +77,16 @@ const ProductShop = () => {
                                     onChange={(e) => sorting(e.target.value)}
                                 >
                                     <option value="default">
-                                        Default sorting
+                                            Tri par defaut
                                     </option>
                                     <option value="popularity">
-                                        Popularity
+                                        Popularité
                                     </option>
                                     <option value="low-high">
-                                        Price: Low to High
+                                        Prix: Bas à Haut
                                     </option>
                                     <option value="high-low">
-                                        Price: High to Low
+                                        Price: Haut à Bas
                                     </option>
                                 </select>
                             </div>
@@ -95,7 +95,7 @@ const ProductShop = () => {
                     <div className="col-lg-4 col-md-4">
                         <div className="filter__found">
                             <h6>
-                                <span>{products.length}</span> Products found
+                                <span>{products.length}</span> Produits trouvés
                             </h6>
                         </div>
                     </div>
@@ -109,11 +109,11 @@ const ProductShop = () => {
             </div>
             <div className="row">
                 {loading ? (
-                    <h3>Loading...</h3>
+                    <h3>Téléchargement...</h3>
                 ) : error === "Not Found" ? (
-                    <h3>Not Found !</h3>
+                    <h3>Pas trouvé !</h3>
                 ) : products.length === 0 ? (
-                    <h3>Not Found !</h3>
+                    <h3>Pas trouvé !</h3>
                 ) : (
                     products.map((product) => {
                         return (

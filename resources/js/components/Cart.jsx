@@ -25,7 +25,7 @@ const Cart = () => {
             .then((res) => {
                 setCarts(Object.values(res.data.carts));
                 setTotal(res.data.cart_total);
-                swal("Success", "Updated Cart !", "info");
+                swal("Succèss", "Panier mis à jour !", "info");
             });
     };
 
@@ -33,13 +33,13 @@ const Cart = () => {
         axios.delete(`cart/${cartId}`).then((res) => {
             setCarts(carts.filter((cart) => cart.id !== cartId));
             setTotal(res.data.cart_total);
-            swal("Success", "Deleted Cart !", "warning");
+            swal("Succèss", "Supprimé du Panier !", "warning");
         });
     };
 
     let tbody = "";
     if (loading) {
-        return <h3>Loading....</h3>;
+        return <h3>Téléchargement....</h3>;
     } else {
         tbody = (
             <tbody>
@@ -48,7 +48,7 @@ const Cart = () => {
                         <td colSpan="5">
                             Cart is Empty{" "}
                             <a href="/shop" className="btn btn-dark">
-                                Go Shopping
+                                Aller à l'achat
                             </a>
                         </td>
                     </tr>
@@ -130,10 +130,10 @@ const Cart = () => {
                             <thead>
                                 <tr>
                                     <th className="shoping__product">
-                                        Products
+                                        Produits
                                     </th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
+                                    <th>Prix</th>
+                                    <th>Quantité</th>
                                     <th>Total</th>
                                     <th></th>
                                 </tr>
@@ -147,14 +147,14 @@ const Cart = () => {
                 <div className="col-lg-12">
                     <div className="shoping__cart__btns">
                         <a href="#" className="primary-btn cart-btn">
-                            CONTINUE SHOPPING
+                            CONTINUER SHOPPING
                         </a>
                         <a
                             href="#"
                             className="primary-btn cart-btn cart-btn-right"
                         >
                             <span className="icon_loading"></span>
-                            Upadate Cart
+                            Mettre le panier à jour
                         </a>
                     </div>
                 </div>
@@ -165,10 +165,10 @@ const Cart = () => {
                             <form action="#">
                                 <input
                                     type="text"
-                                    placeholder="Enter your coupon code"
+                                    placeholder="Entrer le code de votre coupon"
                                 />
                                 <button type="submit" className="site-btn">
-                                    APPLY COUPON
+                                    APPLIQUER UN COUPON
                                 </button>
                             </form>
                         </div>
@@ -176,17 +176,17 @@ const Cart = () => {
                 </div>
                 <div className="col-lg-6">
                     <div className="shoping__checkout">
-                        <h5>Cart Total</h5>
+                        <h5>Total des articles</h5>
                         <ul>
                             <li>
-                                Subtotal <span>${total}</span>
+                                Sous-total <span>{total} FCFA</span>
                             </li>
                             <li>
-                                Total <span>${total}</span>
+                                Total <span>{total} FCFA</span>
                             </li>
                         </ul>
                         <a href="/order/checkout" className="primary-btn">
-                            PROCEED TO CHECKOUT
+                            PROCEDER AU PAYEMENT
                         </a>
                     </div>
                 </div>

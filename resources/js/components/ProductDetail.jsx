@@ -37,7 +37,7 @@ const ProductDetail = () => {
 
         axios.post("/carts", { productId, quantity }).then((res) => {
             if (res.status === 200) {
-                swal("Success", "Added to Cart !", "success");
+                swal("Succèss", "Ajouter au Panier !", "succèss");
                 window.location.reload();
             }
         });
@@ -46,7 +46,7 @@ const ProductDetail = () => {
     return (
         <>
             {loading ? (
-                <h3>Loading...</h3>
+                <h3>Téléchargement...</h3>
             ) : (
                 <div className="container">
                     <div className="row">
@@ -93,10 +93,10 @@ const ProductDetail = () => {
                                     <i className="fa fa-star"></i>
                                     <i className="fa fa-star"></i>
                                     <i className="fa fa-star-half-o"></i>
-                                    <span>(18 reviews)</span>
+                                    <span>(18 commentaires)</span>
                                 </div>
                                 <div className="product__details__price">
-                                    ${product.price}
+                                    {product.price} FCFA
                                 </div>
                                 <p>{product.description}</p>
                                 <form
@@ -138,7 +138,7 @@ const ProductDetail = () => {
                                         className="primary-btn"
                                         style={{ border: "none" }}
                                     >
-                                        ADD TO CARD
+                                        AJOUTER AU PANIER
                                     </button>
                                 </form>
                                 <a href="#" className="heart-icon">
@@ -146,11 +146,11 @@ const ProductDetail = () => {
                                 </a>
                                 <ul>
                                     <li>
-                                        <b>Weight</b>{" "}
-                                        <span>{product.weight} gram</span>
+                                        <b>Poids</b>{" "}
+                                        <span>{product.weight} gramme</span>
                                     </li>
                                     <li>
-                                        <b>Share on</b>
+                                        <b>Partager sur</b>
                                         <div className="share">
                                             <a href="#">
                                                 <i className="fa fa-facebook"></i>
@@ -191,7 +191,7 @@ const ProductDetail = () => {
                                             role="tab"
                                             aria-selected="false"
                                         >
-                                            Reviews <span>(1)</span>
+                                            Commentaires <span>(1)</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -202,7 +202,7 @@ const ProductDetail = () => {
                                         role="tabpanel"
                                     >
                                         <div className="product__details__tab__desc">
-                                            <h6>Products Infomation</h6>
+                                            <h6>Information des Produits</h6>
                                             {product.details}
                                         </div>
                                     </div>
@@ -212,33 +212,13 @@ const ProductDetail = () => {
                                         role="tabpanel"
                                     >
                                         <div className="product__details__tab__desc">
-                                            <h6>Products Infomation</h6>
+                                            <h6>Infomation des produits</h6>
                                             <p>
-                                                Vestibulum ac diam sit amet quam
-                                                vehicula elementum sed sit amet
-                                                dui. Pellentesque in ipsum id
-                                                orci porta dapibus. Proin eget
-                                                tortor risus. Vivamus suscipit
-                                                tortor eget felis porttitor
-                                                volutpat. Vestibulum ac diam sit
-                                                amet quam vehicula elementum sed
-                                                sit amet dui. Donec rutrum
-                                                congue leo eget malesuada.
-                                                Vivamus suscipit tortor eget
-                                                felis porttitor volutpat.
-                                                Curabitur arcu erat, accumsan id
-                                                imperdiet et, porttitor at sem.
-                                                Praesent sapien massa, convallis
-                                                a pellentesque nec, egestas non
-                                                nisi. Vestibulum ac diam sit
-                                                amet quam vehicula elementum sed
-                                                sit amet dui. Vestibulum ante
-                                                ipsum primis in faucibus orci
-                                                luctus et ultrices posuere
-                                                cubilia Curae; Donec velit
-                                                neque, auctor sit amet aliquam
-                                                vel, ullamcorper sit amet
-                                                ligula. Proin eget tortor risus.
+                                               Nous apprécions la qualité de vos articles,
+                                               Je donne 5/5 à vos prtoduits qui sont de qualité
+                                               Je paretage l'avis de mon cooquépiers précedent
+                                               qui a apprécié le contenu de vos articles, je l'avou
+                                               quye ce sont des produits de qualité.
                                             </p>
                                         </div>
                                     </div>

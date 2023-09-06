@@ -153,7 +153,7 @@ const Checkout = () => {
                                 <div className="col-lg-12">
                                     <div className="checkout__input">
                                         <p>
-                                            Full Name<span>*</span>
+                                            Nom complet<span>*</span>
                                         </p>
                                         <input
                                             type="text"
@@ -191,7 +191,7 @@ const Checkout = () => {
                             </div>
                             <div className="checkout__input">
                                 <p>
-                                    City<span>*</span>
+                                    Ville<span>*</span>
                                 </p>
                                 <select
                                     id="city"
@@ -244,7 +244,7 @@ const Checkout = () => {
                                     Address<span>*</span>
                                 </p>
                                 <input
-                                    placeholder="Street Address"
+                                    placeholder="Address Exact"
                                     className="checkout__input__add"
                                     type="text"
                                     value={address}
@@ -256,7 +256,7 @@ const Checkout = () => {
                                     onChange={(e) =>
                                         setAddress2(e.target.value)
                                     }
-                                    placeholder="Apartment, suite, unite ect (optinal)"
+                                    placeholder="Domicile, Rue, unité ect (optionnel)"
                                 />
                             </div>
                             <div className="checkout__input">
@@ -275,7 +275,7 @@ const Checkout = () => {
                                 <div className="col-lg-6">
                                     <div className="checkout__input">
                                         <p>
-                                            Phone<span>*</span>
+                                            Tel<span>*</span>
                                         </p>
                                         <input
                                             type="text"
@@ -309,19 +309,19 @@ const Checkout = () => {
                                     type="text"
                                     value={notes}
                                     onChange={(e) => setNotes(e.target.value)}
-                                    placeholder="Notes about your order, e.g. special notes htmlFor delivery."
+                                    placeholder="Veillez laisser une appréciation"
                                 />
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6">
                             <div className="checkout__order">
-                                <h4>Your Order</h4>
+                                <h4>Votre résumé</h4>
                                 <div className="checkout__order__products">
-                                    Products <span>Total</span>
+                                    Produits <span>Total</span>
                                 </div>
                                 <ul>
                                     {loading ? (
-                                        <h3>Loading...</h3>
+                                        <h3>Téléchargement...</h3>
                                     ) : (
                                         carts.map((cart, index) => {
                                             return (
@@ -329,7 +329,7 @@ const Checkout = () => {
                                                     {cart.name} ({cart.quantity}{" "}
                                                     x {cart.price})
                                                     <span>
-                                                        $
+                                                        FCFA
                                                         {cart.price *
                                                             cart.quantity}
                                                     </span>
@@ -339,18 +339,18 @@ const Checkout = () => {
                                     )}
                                 </ul>
                                 <div className="checkout__order__total">
-                                    Total <span>${total}</span>
+                                    Total <span>{total} FCFA</span>
                                 </div>
                                 {wait ? (
                                     <button
                                         type="submit"
                                         className="site-btn disabled"
                                     >
-                                        Loading....
+                                        Téléchargement....
                                     </button>
                                 ) : (
                                     <button type="submit" className="site-btn">
-                                        PLACE ORDER
+                                        FAIRE LE PAYEMENT
                                     </button>
                                 )}
                             </div>
